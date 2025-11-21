@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Pengelolaan Surat</title>
+    <link rel="stylesheet" href="mesi.css"> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="dashboard-page">
+        <aside class="sidebar">
+            <h2><i class="fas fa-envelope-open-text"></i>APP SELENSIA SURAT</h2>
+            <nav>
+                <button class="nav-btn active-nav" data-target="dashboard"><i class="fas fa-home"></i> Beranda</button>
+                <button class="nav-btn" data-target="input-masuk"><i class="fas fa-inbox"></i> Input Surat Masuk</button>
+                <button class="nav-btn" data-target="lihat-masuk"><i class="fas fa-eye"></i> Lihat Surat Masuk</button>
+                <button class="nav-btn" data-target="input-keluar"><i class="fas fa-paper-plane"></i> Input Surat Keluar</button>
+                <button class="nav-btn" data-target="lihat-keluar"><i class="fas fa-search"></i> Lihat Surat Keluar</button>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <section id="dashboard" class="content-section active-section">
+                <h2><i class="fas fa-chart-line"></i> Selamat Datang di Website Surat!</h2>
+                <p>Silakan pilih menu di samping untuk mulai mengelola surat.</p>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <i class="fas fa-arrow-alt-circle-down"></i>
+                        <span>Total Masuk:</span>
+                        <span id="count-masuk">0</span>
+                    </div>
+                    <div class="stat-card">
+                        <i class="fas fa-arrow-alt-circle-up"></i>
+                        <span>Total Keluar:</span>
+                        <span id="count-keluar">0</span>
+                    </div>
+                </div>
+            </section>
+
+            <section id="input-masuk" class="content-section hidden-section">
+                <h2><i class="fas fa-plus-square"></i> Input Surat Masuk</h2>
+                <form id="form-masuk" class="surat-form">
+
+                    <label for="tgl-masuk">Tanggal Penerima Surat:</label>
+                    <input type="date" id="tgl-masuk" required>
+                
+                    <label for="no-masuk">Nomor Surat:</label>
+                    <input type="text" id="no-masuk" required>
+
+                    <label for="tgl-masuk">Tanggal Surat:</label>
+                    <input type="date" id="tgl-masuk" required>
+
+                    <label for="sifat-surat-masuk">Sifat Surat:</label>
+                    <select id="sifat-surat-masuk" required>
+                        <option value="">-- Pilih Sifat Surat --</option>
+                        <option value="Biasa">Biasa</option>
+                        <option value="Penting">Penting</option>
+                        <option value="-">-</option>
+                    </select>
+
+                    <label for="perihal-masuk">Perihal:</label>
+                    <textarea id="perihal-masuk" required></textarea>
+
+
+                    <label for="asal-surat">Asal Surat:</label>
+                    <select id="asal-surat" required>
+                        <option value="">-- Pilih Asal Surat --</option>
+                        <option value="SETDA">SETDA</option>
+                        <option value="SETWAN">SETWAN</option>
+                        <option value="INSPEKTOIRAT">INSPEKTORAT</option>
+                        <option value="DISDIKBUD">DISDIKBUD</option>
+                        <option value="DISKATAN">DISKATAN</option>
+                        <option value="DINKES">DINKES</option>
+                        <option value="DPUTR">DPUTR</option>
+                        <option value="DISPERKIMTAN">DISPERKIMTAN</option>
+                        <option value="DPPKBP3A">DPPKBP3A</option>
+                        <option value="DISKANAK">DISKANAK</option>
+                        <option value="DLH">DLH</option>
+                        <option value="DISNAKERTRANS">DISNAKERTRANS</option>
+                        <option value="DINSOS">DINSOS</option>
+                        <option value="DISKOMINFO">DISKOMINFO</option>
+                        <option value="DISKOPDAGPERIN">DISKOPDAGPERIN</option>
+                        <option value="DISARSIPUS">DISARSIPUS</option>
+                        <option value="DISHUB">DISHUB</option>
+                        <option value="DPMPTSP">DPMPTSP</option>
+                        <option value="DPMD">DPMD</option>
+                        <option value="DISDUKCAPIL">DISDUKCAPIL</option>
+                        <option value="SATPOLPP">SATPOLPP</option>
+                        <option value="BAPPEDA">BAPPEDA</option>
+                        <option value="BAPPENDA">BAPPENDA</option>
+                        <option value="BKPSDM">BKPSDM</option>
+                        <option value="BPKAD">BPKAD</option>
+                        <option value="BAKESBANGPOL">BAKESBANGPOL</option>
+                        <option value="BPBD">BPBD</option>
+                        <option value="RSUD'45">RSUD'45</option>
+                        <option value="RSUD LINGGAJATI">RSUD LINGGAJATI</option>
+                        <option value="KEC.KUNINGAN">KEC.KUNINGAN</option>
+                        <option value="KEC.CIAWIGEBANG">KEC.CIAWIGEBANG</option>
+                        <option value="KEC.CILIMUS">KEC.CILIMUS</option> 
+                        <option value="KEC.DARMA">KEC.DARMA</option>
+                        <option value="KEC.CIBINGBIN">KEC.CIBINGBIN</option>
+                        <option value="KEC.CIDAHU">KEC.CIDAHU</option>
+                        <option value="KEC.CIGANDAMEKAR">KEC.CIGANDAMEKAR</option>
+                        <option value="KEC.CIWARU">KEC.CIWARU</option>
+                        <option value="KEC.GARAWANGI">KEC.GARAWANGI</option>
+                        <option value="KEC.JALAKSANA">KEC.JALAKSANA</option>
+                        <option value="KEC.KADUGEDE">KEC.KADUGEDE</option>
+                        <option value="KEC.KARANGKANCANA">KEC.KARANGKANCANA</option>
+                        <option value="KEC.KRAMATMULYA">KEC.KRAMATMULYA</option>
+                        <option value="KEC.LEBAKWANGI">KEC.LEBAKWANGI</option>
+                        <option value="KEC.MALEBER">KEC.MALEBER</option>
+                        <option value="KEC.PANCALANG">KEC.PANCALANG</option>
+                        <option value="KEC.MANDIRANCA">KEC.MANDIRANCA</option>
+                        <option value="KEC.SINDANGAGUNG">KEC.SINDANGAGUNG</option>
+                        <option value="KEC.LURAGUNG">KEC.LURAGUNG</option>
+                        <option value="KEC.CIGUGUR">KEC.CIGUGUR</option>
+                        <option value="KEC.CIBEUREM">KEC.CIBEUREM</option>
+                        <option value="KEC.CILEBAK">KEC.CILEBAK</option>
+                        <option value="KEC.CIMAHI">KEC.CIMAHI</option>
+                        <option value="KEC.CINIRU">KEC.CINIRU</option>
+                        <option value="KEC.CIPICUNG">KEC.CIPICUNG</option>
+                        <option value="KEC.HANTARA">KEC.HANTARA</option>
+                        <option value="KEC.JAPARA">KEC.JAPARA</option>
+                        <option value="KEC.KALIMANGGIS">KEC.KALIMANGGIS</option>
+                        <option value="KEC.NUSAHERANG">KEC.NUSAHERANG</option>
+                        <option value="KEC.PASAWAHAN">KEC.PASAWAHAN</option>
+                        <option value="KEC.SELAJAMBE">KEC.SELAJAMBE</option>
+                        <option value="KEC.SUBANG">KEC.SUBANG</option>
+                        <option value="BAGIAN TATA PEMERINTAHAN">BAGIAN TATA PEMERINTAHAN</option>
+                        <option value="BAGIAN HUKUM">BAGIAN HUKUM</option>
+                        <option value="BAGIAN PROKOMPIM">BAGIAN PROKOMPIM</option>
+                        <option value="BAGIAN KESEJAHTERAAN RAKYAT">BAGIAN KESEJAHTERAAN RAKYAT</option>
+                        <option value="BAGIAN PEREKONOMIAN SDA">BAGIAN PEREKONOMIAN SDA</option>
+                        <option value="BAGIAN ADMINISTRASI PEMBANGUNAN">BAGIAN ADMINISTRASI PEMBANGUNAN</option>
+                        <option value="BAGIAN BARANG DAN JASA">BAGIAN BARANG DAN JASA</option>
+                        <option value="BAGIAN UMMUM">BAGIAN UMMUM</option>
+                        <option value="BAGIAN KEUANGAN DAN PERENCANAAN">BAGIAN KEUANGAN DAN PERENCANAAN</option>
+                        <option value="BAGIAN ORGANISASI">BAGAIAN ORGANISASI</option>
+                        <option value="Lainnya">Lainnya...</option>
+                    </select>
+                    <input type="text" id="asal-surat-lainnya" placeholder="Ketik asal surat lainnya..." style="display: none; margin-top: 10px;">
+
+                    
+                    
+
+                    <label for="gambar-surat-masuk">Unggah Gambar Surat (JPG/PNG):</label>
+                    <input type="file" id="gambar-surat-masuk" accept="image/jpeg, image/png">
+                    <img id="preview-gambar-masuk" src="" alt="Pratinjau Gambar" style="max-width: 200px; margin-top: 10px; display: none;">
+
+                    <button type="submit" class="btn success-btn"><i class="fas fa-save"></i> Simpan Surat Masuk</button>
+                </form>
+            </section>
+
+            <section id="lihat-masuk" class="content-section hidden-section print-area">
+                <div class="print-header" style="display: none;">
+                    <h1 id="print-title-masuk"></h1>
+                    <p id="print-date-masuk"></p>
+                </div>
+                <h2>Daftar Surat Masuk <span id="badge-masuk" class="badge badge-success">0</span></h2>
+                
+                <div class="filter-controls">
+                    <div class="search-container">
+                        <input type="text" id="search-input-masuk" placeholder="Cari No. Surat, Asal, atau Perihal..." onkeyup="filterSurat('masuk')">
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-asal-masuk">Filter Asal Surat:</label>
+                        <select id="filter-asal-masuk" onchange="filterSurat('masuk')">
+                        <option value="">-- Pilih Asal Surat --</option>
+                        <option value="SETDA">SETDA</option>
+                        <option value="SETWAN">SETWAN</option>
+                        <option value="INSPEKTOIRAT">INSPEKTORAT</option>
+                        <option value="DISDIKBUD">DISDIKBUD</option>
+                        <option value="DISKATAN">DISKATAN</option>
+                        <option value="DINKES">DINKES</option>
+                        <option value="DPUTR">DPUTR</option>
+                        <option value="DISPERKIMTAN">DISPERKIMTAN</option>
+                        <option value="DPPKBP3A">DPPKBP3A</option>
+                        <option value="DISKANAK">DISKANAK</option>
+                        <option value="DLH">DLH</option>
+                        <option value="DISNAKERTRANS">DISNAKERTRANS</option>
+                        <option value="DINSOS">DINSOS</option>
+                        <option value="DISKOMINFO">DISKOMINFO</option>
+                        <option value="DISKOPDAGPERIN">DISKOPDAGPERIN</option>
+                        <option value="DISARSIPUS">DISARSIPUS</option>
+                        <option value="DISHUB">DISHUB</option>
+                        <option value="DPMPTSP">DPMPTSP</option>
+                        <option value="DPMD">DPMD</option>
+                        <option value="DISDUKCAPIL">DISDUKCAPIL</option>
+                        <option value="SATPOLPP">SATPOLPP</option>
+                        <option value="BAPPEDA">BAPPEDA</option>
+                        <option value="BAPPENDA">BAPPENDA</option>
+                        <option value="BKPSDM">BKPSDM</option>
+                        <option value="BPKAD">BPKAD</option>
+                        <option value="BAKESBANGPOL">BAKESBANGPOL</option>
+                        <option value="BPBD">BPBD</option>
+                        <option value="RSUD'45">RSUD'45</option>
+                        <option value="RSUD LINGGAJATI">RSUD LINGGAJATI</option>
+                        <option value="KEC.KUNINGAN">KEC.KUNINGAN</option>
+                        <option value="KEC.CIAWIGEBANG">KEC.CIAWIGEBANG</option>
+                        <option value="KEC.CILIMUS">KEC.CILIMUS</option> 
+                        <option value="KEC.DARMA">KEC.DARMA</option>
+                        <option value="KEC.CIBINGBIN">KEC.CIBINGBIN</option>
+                        <option value="KEC.CIDAHU">KEC.CIDAHU</option>
+                        <option value="KEC.CIGANDAMEKAR">KEC.CIGANDAMEKAR</option>
+                        <option value="KEC.CIWARU">KEC.CIWARU</option>
+                        <option value="KEC.GARAWANGI">KEC.GARAWANGI</option>
+                        <option value="KEC.JALAKSANA">KEC.JALAKSANA</option>
+                        <option value="KEC.KADUGEDE">KEC.KADUGEDE</option>
+                        <option value="KEC.KARANGKANCANA">KEC.KARANGKANCANA</option>
+                        <option value="KEC.KRAMATMULYA">KEC.KRAMATMULYA</option>
+                        <option value="KEC.LEBAKWANGI">KEC.LEBAKWANGI</option>
+                        <option value="KEC.MALEBER">KEC.MALEBER</option>
+                        <option value="KEC.PANCALANG">KEC.PANCALANG</option>
+                        <option value="KEC.MANDIRANCA">KEC.MANDIRANCA</option>
+                        <option value="KEC.SINDANGAGUNG">KEC.SINDANGAGUNG</option>
+                        <option value="KEC.LURAGUNG">KEC.LURAGUNG</option>
+                        <option value="KEC.CIGUGUR">KEC.CIGUGUR</option>
+                        <option value="KEC.CIBEUREM">KEC.CIBEUREM</option>
+                        <option value="KEC.CILEBAK">KEC.CILEBAK</option>
+                        <option value="KEC.CIMAHI">KEC.CIMAHI</option>
+                        <option value="KEC.CINIRU">KEC.CINIRU</option>
+                        <option value="KEC.CIPICUNG">KEC.CIPICUNG</option>
+                        <option value="KEC.HANTARA">KEC.HANTARA</option>
+                        <option value="KEC.JAPARA">KEC.JAPARA</option>
+                        <option value="KEC.KALIMANGGIS">KEC.KALIMANGGIS</option>
+                        <option value="KEC.NUSAHERANG">KEC.NUSAHERANG</option>
+                        <option value="KEC.PASAWAHAN">KEC.PASAWAHAN</option>
+                        <option value="KEC.SELAJAMBE">KEC.SELAJAMBE</option>
+                        <option value="KEC.SUBANG">KEC.SUBANG</option>
+                        <option value="BAGIAN TATA PEMERINTAHAN">BAGIAN TATA PEMERINTAHAN</option>
+                        <option value="BAGIAN HUKUM">BAGIAN HUKUM</option>
+                        <option value="BAGIAN PROKOMPIM">BAGIAN PROKOMPIM</option>
+                        <option value="BAGIAN KESEJAHTERAAN RAKYAT">BAGIAN KESEJAHTERAAN RAKYAT</option>
+                        <option value="BAGIAN PEREKONOMIAN SDA">BAGIAN PEREKONOMIAN SDA</option>
+                        <option value="BAGIAN ADMINISTRASI PEMBANGUNAN">BAGIAN ADMINISTRASI PEMBANGUNAN</option>
+                        <option value="BAGIAN BARANG DAN JASA">BAGIAN BARANG DAN JASA</option>
+                        <option value="BAGIAN UMMUM">BAGIAN UMMUM</option>
+                        <option value="BAGIAN KEUANGAN DAN PERENCANAAN">BAGIAN KEUANGAN DAN PERENCANAAN</option>
+                        <option value="BAGIAN ORGANISASI">BAGIAN ORGANISASI</option>
+                        <option value="Lainnya">Lainnya...</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-bulan-tahun-masuk">Filter Bulan/Tahun:</label>
+                        <input type="text" id="filter-bulan-tahun-masuk" placeholder="Contoh: Februari 2023 atau 2023" onkeyup="filterSurat('masuk')">
+                    </div>
+                    
+
+                <table id="tabel-masuk">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Tanggal Penerima Surat</th>
+                            <th>Nomor Surat</th>
+                            <th>Tanggal Surat</th>
+                            <th>Sifat Surat</th>
+                            <th>Perihal</th>
+                            <th>Asal Surat</th>
+                            <th>Gambar</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </section>
+
+            <section id="input-keluar" class="content-section hidden-section">
+                <h2><i class="fas fa-plus-square"></i> Input Surat Keluar</h2>
+                <form id="form-keluar" class="surat-form">
+
+                    <label for="tgl-keluar">Tanggal Kirim Surat:</label>
+                    <input type="date" id="tgl-keluar" required>
+
+                    <label for="no-keluar">Nomor Surat:</label>
+                    <input type="text" id="no-keluar" required>
+
+                    <label for="tgl-keluar">Tanggal Keluar:</label>
+                    <input type="date" id="tgl-keluar" required>
+
+                    <label for="sifat-surat-keluar">Sifat Surat:</label>
+                    <select id="sifat-surat-keluar" required>
+                        <option value="">-- Pilih Sifat Surat --</option>
+                        <option value="Biasa">Biasa</option>
+                        <option value="Penting">Penting</option>
+                        <option value="-">-</option>
+                    </select>
+
+                     <label for="perihal-keluar">Perihal:</label>
+                    <textarea id="perihal-keluar" required></textarea>
+
+                    <label for="tujuan-surat">Tujuan Surat:</label>
+                    <input type="text" id="tujuan-surat" required>
+
+                    <label for="gambar-surat-keluar">Unggah Gambar Surat (JPG/PNG):</label>
+                    <input type="file" id="gambar-surat-keluar" accept="image/jpeg, image/png">
+                    <img id="preview-gambar-keluar" src="" alt="Pratinjau Gambar" style="max-width: 200px; margin-top: 10px; display: none;">
+
+                    <button type="submit" class="btn warning-btn"><i class="fas fa-save"></i> Simpan Surat Keluar</button>
+                </form>
+            </section>
+
+            <section id="lihat-keluar" class="content-section hidden-section print-area">
+                <div class="print-header" style="display: none;">
+                    <h1 id="print-title-keluar"></h1>
+                    <p id="print-date-keluar"></p>
+                </div>
+                <h2>Daftar Surat Keluar <span id="badge-keluar" class="badge badge-warning">0</span></h2>
+                
+                <div class="filter-controls">
+                    <div class="search-container">
+                        <input type="text" id="search-input-keluar" placeholder="Cari No. Surat, Tujuan, atau Perihal..." onkeyup="filterSurat('keluar')">
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-bulan-tahun-keluar">Filter Bulan/Tahun:</label>
+                        <input type="text" id="filter-bulan-tahun-keluar" placeholder="Contoh: Februari 2023 atau 2023" onkeyup="filterSurat('keluar')">
+                    </div>
+
+                <table id="tabel-keluar">
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Tanggal Penerima Surat</th>
+                            <th>Nomor Surat</th>
+                            <th>Tanggal Surat</th>
+                            <th>Sifat Surat</th>
+                            <th>Perihal</th>
+                            <th>Tujuan Surat</th>
+                            <th>Gambar</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </section>
+        </main>
+    </div>
+
+    <script src="jawa.js"></script> </body>
+</html>
